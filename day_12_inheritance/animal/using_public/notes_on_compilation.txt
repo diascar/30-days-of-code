@@ -1,0 +1,11 @@
+java Animal.java Dog.java Cat.java
+
+mkdir animal && mv *class animal
+
+# running
+java animal.Animal
+
+# alternatively
+
+java -d Animal.java Dog.java Cat.java
+java animal.Animal

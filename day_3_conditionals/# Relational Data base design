@@ -1,0 +1,63 @@
+# Relational Data base design
+
+* Data base design is an **art form** of its own with particular skills and experience.
+* Our goal is to avoid the really bad mistakes and design clean and easily understood databases.
+* Others may performance-tune things later.
+* Database design starts with a picture...
+
+# Building a data model
+
+* Drawing a picture of the data objects for or application and then figuring out how to represent the objects and their relationships.
+
+* Basic rul: Don't put the same string data in twice - use relationship instead.
+* When there is one thing in the real world there should be one copy of that thing in the database.
+
+For each piece of info...
+
+* Is the column an object or an attribute of another object?
+* Once we define objects, we need to defi
+
+
+CREATE TABLE table_name ("col_name1" datType, "col_name2" dataType);
+
+INSERT INTO table_name (col_name1, col_name2) values (val1. val2);
+
+DELETE FROM table_name WHERE col_name1 = val1;
+
+UPDATE table_name SET col_name1=val3 WHERE col_name2= val2;
+
+SELECT * FROM table_name;
+SELECT * FROM table_name WHERE;
+SELECT * FROM table_name ORDER BY col1 DESC;
+SELECT * FROM table_name ORDER BY col1 ASC;
+
+# 
+
+CREATE TABLE "Artist" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE;
+    "name" TEXT
+);
+
+CREATE TABLE "Track" (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    title TEXT,
+    album_id INTEGER,
+    genre_id INTEGER,
+    len INTEGER,
+    rating INTEGER,
+    count INTEGER
+);
+
+INSERT INTO Artist (name) VALUES ('Led Zepellin');
+INSERT INTO Artist (name) VALUES ('AC/DC);
+
+# JOIN
+
+* The JOIN operation links across several tables as part of a select operation.
+* You must tell the JOIN how to use the keys that make the connection between the tables using an ON clause.
+
+SELECT Album.title, Artist.name FROM Album
+JOIN Artist
+ON Albuns.artist_id = Artist.id;
+
+> Joining two tables without an ON clause gives all possible combinations of rows!!
